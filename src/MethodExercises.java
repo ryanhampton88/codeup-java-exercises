@@ -5,9 +5,14 @@ public class MethodExercises {
     public static void main(String[] args) {
 
 //        System.out.println(multiply(2, 3));
-        int userInput = getInteger(1, 10);
-        int factorial = getFactorial(userInput);
-        System.out.println(factorial);
+//        int userInput = getInteger(1, 10);
+//        long factorial = getFactorial(userInput);
+//        System.out.println(factorial);
+
+        int dice1 = rollDice();
+        int dice2 = rollDice();
+        System.out.println(dice1);
+        System.out.println(dice2);
 
     }
 
@@ -54,11 +59,15 @@ return sum;
         } else {
             return userInput * getFactorial(userInput - 1);
         }
-
-//        int i, n = 1;
-//        for (i = 1; i <= userInput; i++) {
-//            n = n * i;
-//        }
-//        return n;
     }
+
+        public static int rollDice () {
+            int min = 1;
+            int max = 6;
+            int range = max - (min + 1);
+            int random = (int)(Math.random() * range) + min;
+            return random;
+        }
+
+
 }
