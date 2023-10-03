@@ -69,12 +69,12 @@ public class ControlFlowExercises {
 //            System.out.printf("%d      |   %d     |   %d \n", i, square, cube);
 //        }
 //
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Enter a grade: ");
-//        int userInput = scanner.nextInt();
-//
-//        String grade = "";
-//
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a grade: ");
+        int userInput = scanner.nextInt();
+
+        String grade = "";
+
 //        if (userInput >= 88 && userInput <= 100) {
 //            grade = "A";
 //            if (userInput >= 99) {
@@ -95,7 +95,7 @@ public class ControlFlowExercises {
 //        } else if (userInput >= 0 && userInput <= 59) {
 //            grade = "F";
 //        }
-//
+
 //        System.out.println("Grade is: " + grade);
 
     }
