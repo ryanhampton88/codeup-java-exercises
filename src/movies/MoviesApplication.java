@@ -19,7 +19,9 @@ public class MoviesApplication {
    int choice = userChoice.getInt();
 
    if (choice == 1) {
-       System.out.println(Arrays.toString(movies.));
+       for (Movie movie: movies) {
+           System.out.println(movie.getName(movie));
+       }
    } else if (choice == 2){
        choice = userChoice.getInt();
        System.out.println("Which category of movies would you like to see?");
@@ -32,8 +34,23 @@ public class MoviesApplication {
        if (choice == 1) {
            for (int i = 0; i < movies.length; i++) {
                 if (Movie.getCategory(movies[i]).endsWith(("drama"))) {
-                    System.out.println(movies[i]);
+                    System.out.println(movies[i].getName(movies[i]));
                 }
+               if (Movie.getCategory(movies[i]).endsWith(("musical"))) {
+                   System.out.println(movies[i].getName(movies[i]));
+               }
+               if (Movie.getCategory(movies[i]).endsWith(("sci-fi"))) {
+                   System.out.println(movies[i].getName(movies[i]));
+               }
+               if (Movie.getCategory(movies[i]).endsWith(("animated"))) {
+                   System.out.println(movies[i].getName(movies[i]));
+               }
+               if (Movie.getCategory(movies[i]).endsWith(("comedy"))) {
+                   System.out.println(movies[i].getName(movies[i]));
+               }
+               if (Movie.getCategory(movies[i]).endsWith(("horror"))) {
+                   System.out.println(movies[i].getName(movies[i]));
+               }
            }
        }
    }
