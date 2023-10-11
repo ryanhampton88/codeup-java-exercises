@@ -1,5 +1,6 @@
 package grades;
 
+import java.sql.SQLOutput;
 import java.util.*;
 
 
@@ -33,25 +34,40 @@ public class GradesApplication {
 
         HashMap <String, Student> students = new HashMap<>();
 
-        students.put("ryan", ryan);
-        students.put("roman", roman);
-        students.put("rylan", rylan);
-        students.put("carmela", carmela);
+        students.put("gitRyan", ryan);
+        students.put("gitRoman", roman);
+        students.put("gitRylan", rylan);
+        students.put("gitCarmela", carmela);
 
-        System.out.println("Select an individual student to view their record or select ALL:");
-        System.out.println(students.keySet());
+        System.out.println("Select from the following menu options:");
+        System.out.println("1. Type an individual student's name to view their record.");
+        System.out.println("2. Type '2' to view ALL students' grades.");
+        System.out.println("3. Type '3' to print a CSV report for all students.");
+        for (String username : students.keySet()) {
+            System.out.printf("%s | ", students.get(username).getName());
+        }
+        System.out.println();
         String userInput = userRequest.nextLine();
+
+        double totalGradeAvg = 0;
 
         if (students.containsKey(userInput)) {
             System.out.println(students.get(userInput).getName());
             System.out.println(students.get(userInput).getGrades());
             System.out.println(students.get(userInput).getGradeAverage());
-        } else if (userInput.equalsIgnoreCase("All")){
+        } else if (userInput.equals("2")){
             for (String username : students.keySet()) {
+                totalGradeAvg += students.get(username).getGradeAverage();
                 System.out.printf("Student: %s%n grades: %s%n average: %s%n", username, students.get(username).getGrades(), students.get(username).getGradeAverage());
+
             }
-        } else {
-            System.out.println("Student not found.");
+            System.out.println("Overall class average: " + totalGradeAvg / students.size());
+        } else if (userInput.equals("3")) {
+            System.out.println("name,github_username,average");
+            for (String username : students.keySet()) {
+                System.out.printf("%s,%s,%.2f%n", students.get(username).getName(), username, students.get(username).getGradeAverage());
+            }
+
         }
 
     }
