@@ -61,6 +61,11 @@ public class Input {
         return userNumber;
     }
 
+    public String getStringAnswer() {
+        String userInput = scanner.nextLine();
+        return userInput;
+    }
+
 
 
 

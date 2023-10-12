@@ -70,6 +70,8 @@ public class GradesApplication {
 
         }
 
+        ryan.recordAttendance("1991-12-19", "A");
+
     }
 
 
